@@ -1,0 +1,231 @@
+:root {
+  --ink: #19172d;
+  --muted: #8c8999;
+  --line: #e7e2ef;
+  --violet: #9e9af4;
+  --panel: rgba(255, 255, 255, 0.86);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Pretendard, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 22% 20%, rgba(164, 155, 246, 0.35), transparent 28%),
+    radial-gradient(circle at 76% 70%, rgba(251, 207, 232, 0.38), transparent 30%),
+    linear-gradient(135deg, #f9f7ff 0%, #f6f2f8 50%, #fffafc 100%);
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) 360px;
+  gap: 32px;
+  align-items: center;
+  justify-items: center;
+  padding: 28px;
+}
+
+.phone-stage {
+  position: relative;
+  width: min(56vh, 430px);
+  aspect-ratio: 1120 / 2048;
+  border-radius: 42px;
+  filter: drop-shadow(0 26px 54px rgba(28, 24, 49, 0.24));
+}
+
+.screen-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  user-select: none;
+}
+
+.hotspot {
+  position: absolute;
+  border: 0;
+  cursor: pointer;
+}
+
+.hotspot-primary {
+  left: 19%;
+  right: 19%;
+  bottom: 11%;
+  height: 5.8%;
+}
+
+.hotspot-secondary {
+  left: 19%;
+  right: 19%;
+  bottom: 5.6%;
+  height: 4.8%;
+}
+
+.hotspot-home,
+.hotspot-collection,
+.hotspot-night {
+  bottom: 9.5%;
+  height: 6.5%;
+}
+
+.hotspot-home {
+  left: 20%;
+  width: 16%;
+}
+
+.hotspot-collection {
+  left: 43%;
+  width: 18%;
+}
+
+.hotspot-night {
+  left: 67%;
+  width: 17%;
+}
+
+.hotspot-qr {
+  right: 12%;
+  bottom: 21%;
+  width: 28%;
+  height: 8%;
+}
+
+.control-panel {
+  width: 100%;
+  max-height: calc(100vh - 56px);
+  overflow: auto;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 28px;
+  background: var(--panel);
+  box-shadow: 0 24px 70px rgba(48, 43, 74, 0.13);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #fff 0 18%, transparent 19%),
+    radial-gradient(circle, #a29df6 0%, #c9c3ff 58%, #fff7cc 100%);
+  box-shadow: 0 0 28px rgba(148, 141, 240, 0.58);
+}
+
+.brand p,
+.panel-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.brand strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 20px;
+}
+
+.panel-group {
+  margin-top: 22px;
+}
+
+.screen-list {
+  display: grid;
+  gap: 9px;
+  margin-top: 10px;
+}
+
+.screen-button,
+.card-button {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+.screen-button {
+  padding: 0 14px;
+  text-align: left;
+}
+
+.screen-button:hover,
+.card-button:hover,
+.screen-button.active,
+.card-button.active {
+  border-color: var(--violet);
+  background: rgba(244, 242, 255, 0.96);
+  transform: translateY(-1px);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.side-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 4px;
+  border-radius: 14px;
+  background: rgba(231, 226, 239, 0.64);
+}
+
+.side-button {
+  min-height: 36px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.side-button.active {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 8px 22px rgba(55, 49, 84, 0.1);
+}
+
+.card-button {
+  aspect-ratio: 1;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .phone-stage {
+    width: min(92vw, 430px);
+  }
+
+  .control-panel {
+    max-height: none;
+  }
+}
