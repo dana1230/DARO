@@ -9,7 +9,14 @@
   <body>
     <main class="app-shell">
       <section class="phone-stage" aria-label="다로리 앱 미리보기">
-        <div id="phone" class="phone"></div>
+        <img id="screenImage" class="screen-image" src="assets/screens/onboarding-title.png" alt="다로리 온보딩 화면" />
+        <div id="textOverlay" class="text-overlay" aria-hidden="true"></div>
+        <div class="hotspot hotspot-primary" data-next="story1" aria-label="주요 버튼"></div>
+        <div class="hotspot hotspot-secondary" data-next="home" aria-label="보조 버튼"></div>
+        <div class="hotspot hotspot-home" data-next="home" aria-label="홈"></div>
+        <div class="hotspot hotspot-collection" data-next="collection" aria-label="수집함"></div>
+        <div class="hotspot hotspot-night" data-next="night1" aria-label="밤하늘"></div>
+        <div class="hotspot hotspot-qr" data-next="qr" aria-label="QR 스캔"></div>
       </section>
 
       <aside class="control-panel" aria-label="화면 선택">
@@ -17,7 +24,7 @@
           <span class="brand-mark"></span>
           <div>
             <p>다로리</p>
-            <strong>텍스트 수정형 퍼블리싱</strong>
+            <strong>Figma 기반 퍼블리싱</strong>
           </div>
         </div>
 
