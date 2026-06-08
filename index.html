@@ -3,43 +3,31 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>다로리</title>
+    <title>다이루리 온보딩</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="app-shell">
-      <section class="phone-stage" aria-label="다로리 앱 미리보기">
-        <img id="screenImage" class="screen-image" src="assets/screens/onboarding-title.png" alt="다로리 온보딩 화면" />
-        <div id="textOverlay" class="text-overlay" aria-hidden="true"></div>
-        <div class="hotspot hotspot-primary" data-next="story1" aria-label="주요 버튼"></div>
-        <div class="hotspot hotspot-secondary" data-next="home" aria-label="보조 버튼"></div>
-        <div class="hotspot hotspot-home" data-next="home" aria-label="홈"></div>
-        <div class="hotspot hotspot-collection" data-next="collection" aria-label="수집함"></div>
-        <div class="hotspot hotspot-night" data-next="night1" aria-label="밤하늘"></div>
-        <div class="hotspot hotspot-qr" data-next="qr" aria-label="QR 스캔"></div>
+      <section class="phone-stage" aria-label="다이루리 온보딩 미리보기">
+        <div id="phone" class="phone"></div>
       </section>
 
-      <aside class="control-panel" aria-label="화면 선택">
+      <aside class="control-panel" aria-label="온보딩 화면 선택">
         <div class="brand">
           <span class="brand-mark"></span>
           <div>
-            <p>다로리</p>
-            <strong>Figma 기반 퍼블리싱</strong>
+            <p>다이루리</p>
+            <strong>온보딩 4개 화면</strong>
           </div>
         </div>
 
         <div class="panel-group">
-          <p class="panel-label">주요 화면</p>
+          <p class="panel-label">Figma 노드 기준</p>
           <div class="screen-list" id="screenList"></div>
         </div>
 
-        <div class="panel-group">
-          <p class="panel-label">소원 카드</p>
-          <div class="side-toggle" role="group" aria-label="카드 면 선택">
-            <button class="side-button active" type="button" data-side="front">앞면</button>
-            <button class="side-button" type="button" data-side="back">뒷면</button>
-          </div>
-          <div class="card-grid" id="cardGrid"></div>
+        <div class="panel-note">
+          배경은 Figma 시안처럼 유지하고, 카드/버튼/제목/본문은 실제 텍스트 레이어로 분리했습니다.
         </div>
       </aside>
     </main>
